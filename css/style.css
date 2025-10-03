@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid #17881c;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; 
+    background: linear-gradient(#87ceeb), #E0F6FF;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 68px;
+    animation: pipe-animation 1.5s infinite linear;
+    
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.jump{
+     animation: jump 500ms     ease-out;
+}
+
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animations 20s infinite linear;
+}
+
+.score{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.game-over-title {
+    position: absolute;
+    top: 50%;               
+    left: 50%;              
+    transform: translate(-50%, -50%);  
+    text-align:center; 
+    font-size: 60px;       
+    color: black;            
+    font-weight: 900;      
+}
+
+.game-over-subtitle {
+    position: absolute;
+    top: 55%;               
+    left: 50%;              
+    transform: translate(-50%, -50%);  
+    text-align:center;
+    font-size: 24px;      
+    color: rgb(61, 49, 49);          
+    font-weight: normal;   
+    font-size: 24px;
+    font-weight: normal;
+    animation: blink 2.3s infinite;
+}
+
+.hidden{
+    display: none;
+}
+
+
+@keyframes pipe-animation{
+    from{
+    right: -80px;
+    }
+    
+    to{
+    right: 100%;
+    }
+}
+
+@keyframes jump{
+    0%{
+        bottom: 0%;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0%;
+    }
+}
+
+@keyframes clouds-animations{
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes blink {
+     0%, 50%, 100% {
+        opacity: 6;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+
+}
+   
